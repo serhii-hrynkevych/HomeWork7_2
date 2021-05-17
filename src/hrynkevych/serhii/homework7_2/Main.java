@@ -29,6 +29,10 @@ public class Main {
             outOfRange();
         }
 
+        if (inputNumber >= 10000) { //если значение больше 9999 - выводим сообщение функцией
+            outOfRange();
+        }
+
         if (inputNumber >= 0 && inputNumber <= 99) { //если значение от 0вкл до 99вкл (десятки)
             result = outputTens(inputNumber);
             System.out.println(result);
@@ -44,12 +48,9 @@ public class Main {
             System.out.println(result);
         }
 
-        if (inputNumber >= 10000) { //если значение больше 9999 - выводим сообщение функцией
-            outOfRange();
-        }
     }
 
-    public static Integer inputData () { //функция ввода с консоли
+    public static Integer inputData() { //функция ввода с консоли
         Scanner scanner = new Scanner(System.in);
         Integer inputNumber = null; //по умолчанию переменную заполняем null
 
@@ -61,11 +62,11 @@ public class Main {
         return inputNumber; //если нет ошибок возвращаем введенное значение
     }
 
-    public static void outOfRange () { //функция сообщения вне диапазона
+    public static void outOfRange() { //функция сообщения вне диапазона
         System.out.println("Введене число поза діапазоном підтримуємих чисел");
     }
 
-    public static String outputTens (int inputNumber) { //функция вывода результата десятков (ну тут долго описывать действия мои)))
+    public static String outputTens(int inputNumber) { //функция вывода результата десятков (ну тут долго описывать действия мои)))
         String resultTens = "";
 
         if (inputNumber < 20) {
@@ -81,7 +82,7 @@ public class Main {
         return resultTens;
     }
 
-    public static String outputHundreds (int inputNumber) { //функция вывода результата сотен
+    public static String outputHundreds(int inputNumber) { //функция вывода результата сотен
         int hundred = inputNumber / 100;
         int tenth = (inputNumber % 100) / 10;
         int one = inputNumber % 10;
@@ -101,7 +102,7 @@ public class Main {
         return resultHundreds;
     }
 
-    public static String outputThousand (int inputNumber) { //функция вывода результата тысяч
+    public static String outputThousand(int inputNumber) { //функция вывода результата тысяч
         int oneThousand = inputNumber / 1000;
         int hundred = (inputNumber % 1000) / 100;
         int tenth = ((inputNumber - (oneThousand * 1000)) % 100) / 10;
